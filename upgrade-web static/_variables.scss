@@ -1,0 +1,10 @@
+$font-color-title: rgb(195, 114, 127);
+$font-color-text: gray;
+$font-color-link: white;
+$width: 100%;
+
+@mixin titles ($fontWeight, $fontTitle, $fontUnderline) {
+    font-weight: $fontWeight;
+    color: $fontTitle;
+    text-decoration: $fontUnderline;
+}

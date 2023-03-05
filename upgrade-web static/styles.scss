@@ -1,0 +1,191 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    font-family: cursive;
+}
+
+@import "variables";
+
+
+a {
+    color: $font-color-link;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $font-color-title;
+}
+
+.header {
+    background-color: $font-color-text;
+    width: $width;
+    font-size: 14px;
+    height: 15%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
+    border: 2px solid black;
+
+    &_div-logo {
+        grid-column: 1/2;
+
+        &_img {
+            width: 90%;
+            height: 90%;
+            margin-left: 50%;
+        }
+    }
+
+    &_div-indice {
+        width: 100%;
+        height: 40%;
+        display: grid;
+        grid-column: 2/3;
+
+        &_lista {
+            list-style-type: none;
+            font-weight: bold;
+            margin-left: 3%;
+            margin-top: 6%;
+            text-align: center;
+
+            & li {
+                margin: 4%;
+            }
+        }
+    }
+}
+
+h1 {
+    color: $font-color-title;
+    text-decoration: underline;
+    -webkit-text-stroke: black 2px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+h2,
+h3 {
+    @include titles (bold, $font-color-title, underline);
+}
+
+.main {
+    background-image: url(https://png.pngtree.com/background/20220714/original/pngtree-cat-footprints-love-cute-background-picture-image_1605588.jpg);
+    text-align: center;
+
+    &_section {
+        display: block;
+        background-image: url(https://png.pngtree.com/background/20220714/original/pngtree-cat-footprints-love-cute-background-picture-image_1605588.jpg);
+        color: $font-color-link;
+
+        &-article {
+            background-color: rgb(66, 63, 63);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 2%;
+            box-shadow: 5px 5px 5px black;
+
+            &_img {
+                width: 350px;
+                margin: 2%;
+                border-radius: 10px;
+            }
+
+            &_div {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.formulario-h3 {
+    @include titles (bold, $font-color-title, underline);
+}
+
+.formulario {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30%;
+}
+
+
+.footer {
+    background-color: $font-color-text;
+
+    &_bibliografia {
+        width: $width;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: 0.5fr 0.5fr 0.5fr;
+        gap: 10%;
+
+        &-h3 {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            margin-left: 10%;
+            font-size: large;
+        }
+
+        &-lista {
+            list-style-type: none;
+            grid-column: 2/3;
+            grid-row: 2/3;
+            justify-content: space-around;
+
+            &_li {
+                display: inline;
+                font-size: 15px;
+                margin: 0% 3%;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        margin: auto;
+        grid-template-rows: 0.25fr 0.25fr 0.25fr;
+        font-size: 18px;
+
+        &_div-logo {
+            grid-column: 1/2;
+            grid-row: span 3;
+        }
+
+        &_div-indice {
+            grid-row: 2/3;
+        }
+    }
+
+    .header_div-indice_lista li {
+        display: inline;
+    }
+
+    .main_section-article_div p {
+        font-size: 14px;
+    }
+
+    .main_section-article {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 980px) {
+    .main_section-article_div p {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main_section-article_div p {
+        font-size: 18px;
+    }
+}
